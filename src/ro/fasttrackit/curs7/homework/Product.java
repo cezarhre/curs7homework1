@@ -6,9 +6,8 @@ public class Product {
     private double price;
     private int quant;
     private String categ;
-    private boolean hasStock;
     private boolean isCategory;
-    String param = "Citrice";
+
 
     public Product(String name, double price, int quant, String categ) {
         this.name = name;
@@ -42,7 +41,8 @@ public class Product {
     }
 
     public boolean isCategory() {
-        if (categ == param) {
+        String param = "Citrice";
+        if (categ.equals(param)) {
             return true;
         } else {
             return false;
