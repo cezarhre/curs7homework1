@@ -3,12 +3,12 @@ package ro.fasttrackit.curs7.homework;
 public class Person {
     private int age;
     private String name;
-    private boolean isMarried;
+    private String isMarried;
 
-    public Person(int age, String name, boolean isMarried) {
+    public Person(int age, String name, String isMarried) {
         this.age = age;
         this.name = name;
-        isMarried = false;
+        this.isMarried = isMarried;
     }
 
     public int getAge() {
@@ -20,9 +20,9 @@ public class Person {
     }
 
     public String isMarried() {
-        if(isMarried == true) {
+        if(isMarried.equals("yes")) {
             return "is married";
-        }else {
+        } else {
             return "is not married";
         }
     }
