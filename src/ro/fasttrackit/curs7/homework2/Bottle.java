@@ -27,7 +27,7 @@ public class Bottle {
         return state;
     }
 
-    public int isTotalLiquid() {
+    public int totalLiquid() {
         int totalLiquid = 0;
         totalLiquid = totalLiquid - decLiquid + incLiquid;
         return totalLiquid;
@@ -41,7 +41,7 @@ public class Bottle {
         }
     }
 
-    public int isEmptyCapacity() {
+    public int emptyCapacity() {
         int emptyCapacity = 0;
         emptyCapacity = capacity - totalLiquid;
         return emptyCapacity;
@@ -75,7 +75,6 @@ public class Bottle {
         if(validState(newState)){
             this.state = newState;
         }
-
     }
 
     public boolean validState(String newState) {
