@@ -7,12 +7,12 @@ public class Bottle {
     int capacity = 100;
     private int incLiquid;
     private int decLiquid;
-    private String state;
+    private boolean open;
 
-    public Bottle(int incLiquid, int decLiquid, String state) {
+    public Bottle(int incLiquid, int decLiquid, boolean open) {
         this.incLiquid = incLiquid;
         this.decLiquid = decLiquid;
-        this.state = "closed";
+        this.open = open;
     }
 
     public int getIncLiquid() {
@@ -23,12 +23,11 @@ public class Bottle {
         return decLiquid;
     }
 
-    public String getState() {
-        return state;
+    public boolean isOpen() {
+        return open;
     }
 
     public int totalLiquid() {
-        int totalLiquid = 0;
         totalLiquid = totalLiquid - decLiquid + incLiquid;
         return totalLiquid;
     }
@@ -55,30 +54,20 @@ public class Bottle {
         }
     }
 
-    public String closedOpen() {
-        if (getState().equals("closed")) {
-            return " you cannot drink";
+    public String openBottle() {
+        if (open) {
+            return "Bottle is already open";
         } else {
-            return " you can drink";
+            return "Bottle is open";
         }
     }
 
-    public String openClosed() {
-        if (getState().equals("open")) {
-            return "The bottle is already open";
+    public String closedBottle() {
+        if (!open) {
+            return "The bottle is already closed";
         } else {
-            return "Open the bottle";
+            return "The bottle is closed";
         }
-    }
-
-    public void setState(String newState){
-        if(validState(newState)){
-            this.state = newState;
-        }
-    }
-
-    public boolean validState(String newState) {
-        return "open".equalsIgnoreCase(newState) || "closed".equalsIgnoreCase(newState);
     }
 }
 
