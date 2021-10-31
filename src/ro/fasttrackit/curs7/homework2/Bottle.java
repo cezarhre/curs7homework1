@@ -42,8 +42,7 @@ public class Bottle {
 
     public int emptyCapacity() {
         int emptyCapacity = 0;
-        emptyCapacity = capacity - totalLiquid;
-        return emptyCapacity;
+        return emptyCapacity = capacity - totalLiquid;
     }
 
     public String emptyBottle() {
